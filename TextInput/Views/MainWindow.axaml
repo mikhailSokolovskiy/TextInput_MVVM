@@ -16,9 +16,9 @@
     </Design.DataContext>
 
     <StackPanel>
-        <TextBox Text="{Binding Caption, Mode=TwoWay}"></TextBox>
-        <TextBlock Text="{Binding Caption, Mode=TwoWay}"></TextBlock>
-        <Button Content="Click me"></Button>
+        <TextBox Text="{Binding Caption}"></TextBox>
+        <TextBlock Text="{Binding NewText}"></TextBlock>
+        <Button Content="Click me" Command="{Binding WriteText}"></Button>
     </StackPanel>
 
 </Window>
