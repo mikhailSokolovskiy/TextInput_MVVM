@@ -6,20 +6,39 @@ namespace TextInput.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-    private string _caption;
+    private string _firstName;
+    private string _secondName;
+    private string _adress;
+    private int _repeat;
     
-    public string Caption
+    public string FirstName
     {
-        get => _caption;
-        set => this.RaiseAndSetIfChanged(ref _caption, value);
+        get => _firstName;
+        set => this.RaiseAndSetIfChanged(ref _firstName, value);
+    }
+    public string SecondName
+    {
+        get => _secondName;
+        set => this.RaiseAndSetIfChanged(ref _secondName, value);
+    }
+    
+    public string Adress
+    {
+        get => _adress;
+        set => this.RaiseAndSetIfChanged(ref _adress, value);
+    }
+    public int Repeat
+    {
+        get => _repeat;
+        set => this.RaiseAndSetIfChanged(ref _repeat, value);
     }
 
-    private string _newText;
+    private string _allInfo;
 
-    public string NewText
+    public string AllInfo
     {
-        get => _newText;
-        set => this.RaiseAndSetIfChanged(ref _newText, value);
+        get => _allInfo;
+        set => this.RaiseAndSetIfChanged(ref _allInfo, value);
     }
     public ReactiveCommand<Unit, Unit> WriteText { get; }
 
@@ -27,7 +46,10 @@ public class MainWindowViewModel : ViewModelBase
     {
         WriteText = ReactiveCommand.Create((() =>
         {
-            NewText = Caption;
+            for (int i = 0; i < Repeat; i++)
+            {
+                AllInfo += FirstName + "\n" + SecondName + "\n" + Adress + "\n";
+            }
         }));
     }
 }

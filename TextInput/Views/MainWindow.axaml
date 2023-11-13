@@ -16,8 +16,11 @@
     </Design.DataContext>
 
     <StackPanel>
-        <TextBox Text="{Binding Caption}"></TextBox>
-        <TextBlock Text="{Binding NewText}"></TextBlock>
+        <TextBox Text="{Binding FirstName}"></TextBox>
+        <TextBox Text="{Binding SecondName}"></TextBox>
+        <TextBox Text="{Binding Adress}"></TextBox>
+        <TextBox Text="{Binding Repeat}"></TextBox>
+        <TextBlock Text="{Binding AllInfo}"></TextBlock>
         <Button Content="Click me" Command="{Binding WriteText}"></Button>
     </StackPanel>
 
